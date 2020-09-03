@@ -292,6 +292,11 @@ def calcPercentile(argList):
 	V, name, plotCoverage, pLow, pHigh = argList
 	transV = np.log(V[V > 0])
 	# pLow and pHigh should be <= 1.0
+	
+	# fix values to 100% scale
+	pLow = pLow*100
+        pHigh = pHigh*100
+
 	q1, q3 = np.percentile(transV, (pLow, pHigh))
 	if plotCoverage:
 		plt.figure(figsize=(10,3))
