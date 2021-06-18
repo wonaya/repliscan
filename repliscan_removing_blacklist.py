@@ -836,7 +836,7 @@ def makeGFF(fList, chromDict, level, S, plotCov, threshMethod, scope, useLog, th
 			for i in xrange(np.shape(maskM)[1]):
 				maskRow = maskM[:,i]
 				vRow = np.copy(allSignal[:,i])
-					vRow[maskRow == 0] = 0.0
+				vRow[maskRow == 0] = 0.0
 				rowSum = np.sum(maskRow)
 				if rowSum > 1:
 					maskM[:,i] = classProportion(vRow)
