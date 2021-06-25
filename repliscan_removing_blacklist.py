@@ -859,7 +859,7 @@ def makeGFF(fList, chromDict, level, S, plotCov, threshMethod, scope, useLog, th
 	start = 1
 	##### If blacklist on 
 	if blacklist : 
-		os.system("bedtools subtract -a "+fSuff+'_segmentation.gff3 -b G1_blacklist.bedgraph > '+fSuff+'_segmentation_sub.blacklist.gff3')
+		os.system("bedtools subtract -a "+fSuff+'_segmentation.gff3 -b G1_norm_blacklist.bedgraph > '+fSuff+'_segmentation_sub.blacklist.gff3')
 		## rename genes
                 outfile = open(fSuff+'_segmentation_sub.blacklist.temp', 'w')
                 for a in open(fSuff+'_segmentation_sub.blacklist.gff3', 'r') :
