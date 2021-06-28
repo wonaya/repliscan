@@ -865,7 +865,7 @@ def makeGFF(fList, chromDict, level, S, plotCov, threshMethod, scope, useLog, th
                 for a in open(fSuff+'_segmentation_sub.blacklist.gff3', 'r') :
                 	outfile.write("\t".join(a.split("\t")[:-1])+"\t")
                         outfile.write("ID=gene"+str(start)+";")
-                        outfile.write(";".join(a.split("\t")[-1].split(";")[1:])+"\n")
+                        outfile.write(";".join(a.split("\t")[-1].split(";")[1:]))
                         start += 1
                 outfile.close()
                 os.system("mv "+fSuff+'_segmentation_sub.blacklist.temp '+fSuff+'_segmentation_sub.blacklist.gff3')
